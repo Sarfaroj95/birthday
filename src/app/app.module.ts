@@ -24,6 +24,7 @@ import { NzImageModule } from 'ng-zorro-antd/image';
 import { ChatBoatComponent } from './components/chat-boat/chat-boat.component';
 import { NewYearsComponent } from './components/new-years/new-years.component';
 import { BirthDayComponent } from './components/birth-day/birth-day.component';
+import { CommonComponent } from './common/common.component';
 
 registerLocaleData(en);
 
@@ -38,7 +39,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     HomeComponent,
     NewYearsComponent,
     BirthDayComponent,
-    ChatBoatComponent
+    ChatBoatComponent,
+    CommonComponent
     
   ],
   imports: [

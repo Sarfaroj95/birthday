@@ -1,0 +1,44 @@
+<!-- Header -->
+<div class="header">
+    <p class="blink-soft">-: I LOVE YOU SONA BACHHA :-</p>
+</div>
+<!-- Router  -->
+<!-- <router-outlet></router-outlet> -->
+<div [ngSwitch]="pageType">
+    <div *ngSwitchCase="'home'">
+        <app-home></app-home>
+    </div>
+    <div *ngSwitchCase="'birth-day'">
+        <app-birth-day></app-birth-day>
+    </div>
+    <div *ngSwitchCase="'new-year'">
+       <app-new-years></app-new-years>
+    </div>
+    <div *ngSwitchCase="'chat-boat'">
+        <app-chat-boat></app-chat-boat>
+    </div>
+</div>
+
+<!-- Footer tabs section -->
+<div class="main">
+    <div class="nav-bar">
+        <li>
+            <ul><a  [class.active]="pageType === 'home'"  (click)="Submit('home')">
+                <i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+            </ul>
+            <ul><a [class.active]="pageType === 'birth-day'" (click)="Submit('birth-day')">
+                <i class="fa fa-birthday-cake" aria-hidden="true"></i><span>Birth day</span></a>
+            </ul>
+            <ul><a [class.active]="pageType === 'new-year'" (click)="Submit('new-year')">
+                <i class="fa fa-heart-o" aria-hidden="true"></i><span>New Year</span></a>
+            </ul>
+            <ul><a [class.active]="pageType === 'chat-boat'" (click)="Submit('chat-boat')">
+                <i class="fa fa-commenting-o" aria-hidden="true"></i><span>Chat Boat</span></a>
+            </ul>
+        </li>
+    </div>  
+</div>
+
+
+
+
