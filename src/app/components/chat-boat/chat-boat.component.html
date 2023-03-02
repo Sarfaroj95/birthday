@@ -1,0 +1,12 @@
+<div class="main-container">
+    <div>
+        <div class="card my-2" style="width: 18rem;" *ngFor="let card of cardData">
+            <img class="card-img-top" [src]="card.imgUrl" alt="Card image cap">
+            <div class="card-body">
+                <h6 class="card-title">{{card.title}}</h6>
+                <p class="card-text">{{card.descriptioon}}</p>
+            </div>
+        </div>   
+    </div>
+</div>
+    

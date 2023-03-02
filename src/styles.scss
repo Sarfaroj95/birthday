@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css"
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+// common card blinking
+.card{
+    border-bottom: 4px solid #6457f5;
+    animation-name: blinking;
+    animation-duration: 2.5s;
+    animation-iteration-count: 10000;
+  
+  }
+  
+  
+    @keyframes blinking {
+      50% {
+          border-color: #ee3110;
+      }
+    }
