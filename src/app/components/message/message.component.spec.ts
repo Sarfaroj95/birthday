@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewYearsComponent } from './new-years.component';
+import { MessageComponent } from './message.component';
 
-describe('NewYearsComponent', () => {
-  let component: NewYearsComponent;
-  let fixture: ComponentFixture<NewYearsComponent>;
+describe('MessageComponent', () => {
+  let component: MessageComponent;
+  let fixture: ComponentFixture<MessageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewYearsComponent ]
+      declarations: [ MessageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NewYearsComponent);
+    fixture = TestBed.createComponent(MessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

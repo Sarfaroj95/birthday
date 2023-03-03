@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommonComponent implements OnInit {
   pageType: string = "home";
+
+  
   constructor() { }
 
   ngOnInit(): void {

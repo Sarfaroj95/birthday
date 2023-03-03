@@ -3,11 +3,10 @@
         <div class="card my-2" style="width: 18rem;" *ngFor="let data of cardNewYear">
             <img class="card-img-top" [src]="data?.imgUrl" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{data?.title}}</h5>
+                <h5 class="card-title">{{data?.title | uppercase}}</h5>
                 <p class="card-text">{{data?.description}}</p>
             </div>
         </div>     
        
     </div>
 </div>
-    

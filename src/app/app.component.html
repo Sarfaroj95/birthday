@@ -1,1 +1,56 @@
-<app-common></app-common>
+<!-- <app-common></app-common> -->
+
+<!-- Header -->
+<div class="header">
+    <p class="blink-soft">-: I LOVE YOU SONA BACHHA :-</p>
+</div>
+<!-- Router  -->
+<!-- <router-outlet></router-outlet> -->
+<div [ngSwitch]="pageType">
+    <div *ngSwitchCase="'home'">
+        <app-home></app-home>
+    </div>
+  
+    <div *ngSwitchCase="'messages'">
+       <app-message></app-message>
+    </div>
+    <div *ngSwitchCase="'love'">
+       <app-love></app-love>
+     </div>
+    <div *ngSwitchCase="'birth-day'">
+        <app-birth-day></app-birth-day>
+    </div>
+    <div *ngSwitchCase="'chat-boat'">
+        <app-chat-boat></app-chat-boat>
+    </div>
+</div>
+
+<!-- Footer tabs section -->
+<div class="main">
+    <div class="nav-bar">
+        <li class="nav-bar-list">
+            <ul><a  [class.active]="pageType === 'home'"  (click)="Submit('home')">
+                <i class="fa fa-home" aria-hidden="true"><span>Home</span></i></a>
+            </ul>
+            <ul><a [class.active]="pageType === 'messages'" (click)="Submit('messages')">
+                <i class="fa fa-book" aria-hidden="true"><span>Message</span></i></a>
+            </ul>
+           
+            <ul><a [class.active]="pageType === 'love'" (click)="Submit('love')">
+                <i class="fa fa-heart-o" aria-hidden="true"><span>Love</span></i></a>
+            </ul>
+           
+            <ul><a [class.active]="pageType === 'birth-day'" (click)="Submit('birth-day')">
+                <i class="fa fa-birthday-cake" aria-hidden="true"><span>Birth day</span></i></a>
+            </ul>
+            <ul><a [class.active]="pageType === 'chat-boat'" (click)="Submit('chat-boat')">
+                <i class="fa fa-commenting-o" aria-hidden="true"><span>Chat Boat</span></i></a>
+            </ul>
+            
+        </li>
+    </div>  
+</div>
+
+
+
+

@@ -22,9 +22,10 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { ChatBoatComponent } from './components/chat-boat/chat-boat.component';
-import { NewYearsComponent } from './components/new-years/new-years.component';
 import { BirthDayComponent } from './components/birth-day/birth-day.component';
 import { CommonComponent } from './common/common.component';
+import { LoveComponent } from './components/love/love.component';
+import { MessageComponent } from './components/message/message.component';
 
 registerLocaleData(en);
 
@@ -37,8 +38,9 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   declarations: [
     AppComponent,
     HomeComponent,
-    NewYearsComponent,
     BirthDayComponent,
+    LoveComponent,
+    MessageComponent,
     ChatBoatComponent,
     CommonComponent
     
