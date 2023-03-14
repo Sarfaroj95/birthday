@@ -1,10 +1,12 @@
 .header{
-    background-color: #6457f5;
+    background-color: #BB2D3B;
+    // border-radius: 0px 0px 20px 20px ;
+    // height: 70px;
     p{
       padding: 8px;
       color: #fff;
       text-align: center;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
   .main{
@@ -22,6 +24,7 @@
     padding: 12px;
     background-color: #dce6fa;
     width: 100%;
+    border-radius: 8px 8px 0px 0px;
     // .nav-bar-list{
     //     width: 400px;
     //     background-color: red;

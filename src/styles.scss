@@ -4,18 +4,27 @@
 @import "~ng-zorro-antd/ng-zorro-antd.min.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 
+body{
+  background-color: #f2f5fb;;
+ 
+}
 .main-container{
     display: flex;
     justify-content: center;
+    // margin-top: -30px;
     padding-bottom: 60px;
 }
 
 // common card blinking
 .card{
-    border-bottom: 4px solid #6457f5;
-    animation-name: blinking;
-    animation-duration: 2.5s;
-    animation-iteration-count: 10000;
+  
+  // Animation Css
+    // border-bottom: 4px solid #6457f5;
+    // animation-name: blinking;
+    // animation-duration: 2.5s;
+    // animation-iteration-count: 10000;
+    border: none;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.15);
   
   }
   

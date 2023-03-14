@@ -9,7 +9,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
@@ -26,6 +26,9 @@ import { BirthDayComponent } from './components/birth-day/birth-day.component';
 import { CommonComponent } from './common/common.component';
 import { LoveComponent } from './components/love/love.component';
 import { MessageComponent } from './components/message/message.component';
+import { LoginComponent } from './components/chat-boat/login/login.component';
+import { TextComponent } from './components/chat-boat/text/text.component';
+import { CredentialsService } from './services/credentials.service';
 
 registerLocaleData(en);
 
@@ -42,6 +45,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     LoveComponent,
     MessageComponent,
     ChatBoatComponent,
+    LoginComponent,
+    TextComponent,
     CommonComponent
     
   ],
@@ -57,12 +62,14 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzMenuModule,
     NzTabsModule,
     NzIconModule,
-    NzImageModule 
+    NzImageModule,
+    ReactiveFormsModule,
     
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
-    { provide: NZ_ICONS, useValue: icons }
+    { provide: NZ_ICONS, useValue: icons },
+    CredentialsService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,19 @@
+.pin-form{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px 8px 12px;
+}
+
+.show{
+    transition: opacity 0.2s;
+     display: 0.2s;
+}
+.error-pin{
+    font-size: 14px;
+    color: #ee3110;
+    padding: 0px 14px 6px;
+}
+input:focus {
+    background-color: rgb(210, 223, 252);
+    border: 1px solid #ee3110;;
+  }

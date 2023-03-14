@@ -1,0 +1,22 @@
+.login-section{
+   margin-top: 13%;
+}
+
+.card{
+   background: transparent;
+   // opacity: 0.5;
+}
+.form-control{
+   border: none;
+   background: transparent;
+   border-bottom: 1px solid #BB2D3B;;
+   
+}
+
+
+@media screen and (max-width: 480px) {
+    .login-section{
+        margin-top: 50%;
+     }
+  }
+  

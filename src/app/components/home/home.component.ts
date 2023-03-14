@@ -15,6 +15,23 @@ export class HomeComponent implements OnInit {
     },
   ]
 
+  songsUrl:any = [
+    { 
+      _id:1,
+      title: "Love you",
+      videoUrl: "../../../assets/Videos/foru.mp4"
+    },
+    { 
+      _id:1,
+      title: "Love you",
+      videoUrl: "../../../assets/Videos/foru1.mp4"
+    },
+  ]
+
+  youtubeBase:string = "https://www.youtube.com/embed/"
+
+  url: string = "OfaK8L_kADE"
+
   constructor() { }
 
   ngOnInit(): void {

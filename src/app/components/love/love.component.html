@@ -1,12 +1,45 @@
 <div class="main-container">
     <div>
-        <div class="card my-2" style="width: 18rem;" *ngFor="let data of cardNewYear">
+        <div class="card my-3" style="width: 18rem;" *ngFor="let data of cardNewYear">
             <img class="card-img-top" [src]="data?.imgUrl" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{data?.title | uppercase}}</h5>
                 <p class="card-text">{{data?.description}}</p>
             </div>
-        </div>     
-       
+        </div>   
+         
+        <div class="show" *ngIf="ourSection">
+            <h4>Pagol Mon</h4>
+            <hr/>
+            <div class="card my-3" style="width: 18rem;" *ngFor="let data of privateImg">
+                <img class="card-img-top" [src]="data?.imgUrl" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{data?.title | uppercase}}</h5>
+                    <p class="card-text">{{data?.description}}</p>
+                </div>
+            </div> 
+            <!-- <div class="py-3">
+                <button class="btn btn-outline-danger btn-sm w-100" (click)="weShowNext()">{{"Hide Me Dear"}}</button>
+            </div>  -->
+        </div>
+        <div *ngIf="show">
+            <span *ngIf="error" class="error-pin">Please put right pin</span> 
+            <div class="card show" style="width: 18rem;">
+                <form class="pin-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <!-- <div class="mb-3">
+                    <input type="text" formControlName="username" class="form-control form-control-sm" placeholder="Username">
+                    </div> -->
+                    <div>
+                    <input type="password" formControlName="pin" class="form-control form-control-sm" placeholder="Enter Pin">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-danger btn-sm">Submit</button>
+                    </div>
+                </form>
+            </div>  
+        </div>
+        <div class="py-3" *ngIf="!show && !ourSection">
+            <button class="btn btn-outline-danger btn-sm w-100" (click)="weShow()">{{"I Love You !"}}</button>
+        </div> 
     </div>
 </div>
