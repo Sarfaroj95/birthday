@@ -17,4 +17,5 @@ export class BirthDayComponent implements OnInit {
     this.loveCount +=1
   }
 
+  //add new comments
 }
