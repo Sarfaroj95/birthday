@@ -64,6 +64,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzIconModule,
     NzImageModule,
     ReactiveFormsModule,
+    HttpClientModule
     
   ],
   providers: [

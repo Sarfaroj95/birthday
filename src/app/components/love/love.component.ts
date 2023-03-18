@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 
@@ -23,6 +23,9 @@ export class LoveComponent implements OnInit {
       imgUrl: "../assets/foru/l2.jpeg"
     },
   ]
+
+  // send data from app componets  imp later
+  @Input()  datas : any;
 
   privateImg:any = [
     { _id: 1, title: "Sudhu Tumi", 

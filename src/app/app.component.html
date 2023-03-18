@@ -15,7 +15,7 @@
        <app-message></app-message>
     </div>
     <div *ngSwitchCase="'love'">
-       <app-love></app-love>
+       <app-love [datas]="getFilterData"></app-love>
      </div>
     <div *ngSwitchCase="'birth-day'">
         <app-birth-day></app-birth-day>
