@@ -67,10 +67,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     HttpClientModule
     
   ],
-  providers: [
-    { provide: NZ_I18N, useValue: en_US },
-    { provide: NZ_ICONS, useValue: icons },
-    CredentialsService
+  providers: [ CredentialsService
   ],
   bootstrap: [AppComponent]
 })

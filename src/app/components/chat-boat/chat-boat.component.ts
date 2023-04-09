@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CredentialsService } from 'src/app/services/credentials.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-chat-boat',
@@ -19,13 +21,26 @@ export class ChatBoatComponent implements OnInit {
     // }
   ]
 
+  isButton:boolean = false;
+  isLogin:boolean = false;
+  loginForm!: FormGroup;
+
+  formData!: FormGroup<any>;
+  errorMessage: boolean = false;
+  user!: any;
+
+  messages:any = [];
+
 
 @Input() data:any
-  isLogin: boolean = false;
 
-  constructor(private service: CredentialsService) { }
+  constructor(private fb: FormBuilder, private service: CredentialsService) { }
+
 
   ngOnInit(): void {
+    this.initFormLog();
+    this.initForm();
+    this.getMessage();
   }
 
   updateData(val:boolean){
@@ -33,6 +48,70 @@ export class ChatBoatComponent implements OnInit {
     console.log("passed data",val)
   }
 
+  showBottom(){
+     this.isButton = !this.isButton;
+  }
+
+  logOut(){
+    this.service.logOut();
+    this.isLogin = false;
+    this.isButton = false;
+  }
+
+  initFormLog(){
+    this.loginForm = this.fb.group({
+      username: [''],
+      passcode: [''],
+    })
+  }
+
+  initForm(){
+    this.formData = this.fb.group({
+      text: ['', Validators.required],
+      user: [],
+    })
+}
+
+
+getErrorMessage(){
+  this.errorMessage = false;
+}
+
+onSubmitLog(){
+  const formValue = this.loginForm.value;
+    this.service.ChatLogIn(formValue).subscribe( response => {
+      this.service.setUserName(response);
+      this.loginForm.reset();
+      this.isLogin = true;
+      this.user  = this.service.getUser()!.slice(0, 1);
+    }, 
+    err =>{
+      this.errorMessage = true;
+    })
+}
+
+
+// Message Submit
+onSubmit(){
+  let data: any   =  { text: this.formData.value.text, user: this.service.getUserName() };
+  this.service.postMessage(data).subscribe( res => {
+   this.formData.reset();
+    this.getMessage();
+  },
+  (err) => {
+    console.log("Message not submit", err)
+  })
+}
+
+
+getMessage(){
+  this.service.getData().subscribe( res => {
+    console.log("SMS", res)
+    this.messages = res;
+  })
+  }
+
+  
 
     // ngOnChanges(changes: SimpleChanges): void{
     //   console.log(changes)

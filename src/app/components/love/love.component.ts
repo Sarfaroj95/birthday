@@ -57,7 +57,7 @@ export class LoveComponent implements OnInit {
   }
 
   onSubmit(){
-    if( this.loginForm.value.pin === "143s"){
+    if( this.loginForm.value.pin === "1432"){
       this.ourSection = true;
       this.show = false;
       this.error = false;

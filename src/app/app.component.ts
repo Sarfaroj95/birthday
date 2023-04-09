@@ -15,17 +15,17 @@ export class AppComponent {
 
   Submit(data:any){
     this.pageType = data;
-    this.getData(data);
+    // this.getData(data);
   }
 
 
   // get data from service imp Later
-  getData(data:any){
-    this.service.getListdata().subscribe(res=> {
-      let arr = res.filter((items:any) => items.type === data);
-      this.getFilterData = arr;
-      console.log("FIlter data: ", arr)
-    })
-  }
+  // getData(data:any){
+  //   this.service.getListdata().subscribe(res=> {
+  //     let arr = res.filter((items:any) => items.type === data);
+  //     this.getFilterData = arr;
+  //     console.log("FIlter data: ", arr)
+  //   })
+  // }
 
 }
