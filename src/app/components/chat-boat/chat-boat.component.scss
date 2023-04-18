@@ -24,6 +24,7 @@
       align-items: center;
       padding: 16px 10px 16px;
       color: #fff;
+      border-radius: 5px 5px 0px 0px;
   }
   .user-log{
     height: 28px;
@@ -41,4 +42,8 @@
     }
   
   
+  }
+
+  .footer{
+    z-index: -1;
   }
