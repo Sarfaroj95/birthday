@@ -51,6 +51,10 @@ export class CredentialsService {
       localStorage.setItem('user', userDetails.name );
     });
 	}
+
+  getnameUser(){
+    return "Roni"
+  }
 	
 	userNameService(userid: any ){
 	  return this.http.get(this.url+"chatuserget/"+userid)

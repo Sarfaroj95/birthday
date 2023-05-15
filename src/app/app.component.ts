@@ -28,4 +28,10 @@ export class AppComponent {
   //   })
   // }
 
+  // getFilter(){
+  //   return this.getFilterData.filter((items:any)=> items.type ==="Home")
+  //   return this.getFilterData.filter((items:any)=> items.type ==="Home").lenght
+
+  // }
+
 }
