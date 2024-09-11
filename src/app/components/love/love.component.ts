@@ -1,11 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpperCasePipe } from '@angular/common';
 
 
 @Component({
-  selector: 'app-love',
-  templateUrl: './love.component.html',
-  styleUrls: ['./love.component.scss']
+    selector: 'app-love',
+    templateUrl: './love.component.html',
+    styleUrls: ['./love.component.scss'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, UpperCasePipe]
 })
 export class LoveComponent implements OnInit {
 

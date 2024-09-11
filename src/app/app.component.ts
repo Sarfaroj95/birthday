@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 import { CredentialsService } from './services/credentials.service';
+import { ChatBoatComponent } from './components/chat-boat/chat-boat.component';
+import { BirthDayComponent } from './components/birth-day/birth-day.component';
+import { LoveComponent } from './components/love/love.component';
+import { MessageComponent } from './components/message/message.component';
+import { HomeComponent } from './components/home/home.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [HomeComponent, MessageComponent, LoveComponent, BirthDayComponent, ChatBoatComponent]
 })
 export class AppComponent {
   title: string = "bachha";

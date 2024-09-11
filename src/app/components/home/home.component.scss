@@ -1,2 +1,9 @@
 
 
+.main{
+  display: flex;
+  gap: 4px;
+}
+.card{
+  flex-grow: 1;
+}

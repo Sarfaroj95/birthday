@@ -8,8 +8,8 @@ describe('LoveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoveComponent ]
-    })
+    imports: [LoveComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(LoveComponent);

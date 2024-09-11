@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-birth-day',
-  templateUrl: './birth-day.component.html',
-  styleUrls: ['./birth-day.component.scss']
+    selector: 'app-birth-day',
+    templateUrl: './birth-day.component.html',
+    styleUrls: ['./birth-day.component.scss'],
+    standalone: true
 })
 export class BirthDayComponent implements OnInit {
   loveCount:number = 101

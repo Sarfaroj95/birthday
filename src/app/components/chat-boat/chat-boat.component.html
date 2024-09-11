@@ -1,69 +1,72 @@
 <div class="main-container">
-    <div>
-        <div *ngIf="!isLogin">
-            <div class="card my-2" style="width: 18rem;" *ngFor="let card of cardData">
-                <img class="card-img-top" [src]="card.imgUrl" alt="Card image cap">
-                <a (click)="showBottom()">
-                    <div class="card-body">
-                        <p class="card-title">{{card?.title}}</p>
-                        <p class="card-text">{{card?.descriptioon}}</p>
-                    </div>
-                </a>
-            </div> 
-       
-       
-        <div *ngIf="isButton">
+  <div>
+    @if (!isLogin) {
+      <div>
+        @for (card of cardData; track card) {
+          <div class="card my-2" style="width: 18rem;">
+            <img class="card-img-top" [src]="card.imgUrl" alt="Card image cap">
+            <a (click)="showBottom()">
+              <div class="card-body">
+                <p class="card-title">{{card?.title}}</p>
+                <p class="card-text">{{card?.descriptioon}}</p>
+              </div>
+            </a>
+          </div>
+        }
+        @if (isButton) {
+          <div>
             <div class="card" style="width: 18rem;">
-               
-                    <div class="card-body">
-                        <form [formGroup]="loginForm" (ngSubmit)="onSubmitLog()">
-                            <label *ngIf="errorMessage" class="error-message">Username and passcode is wrong !</label>
-                            <div class="mb-3">
-                              <input type="text" (ngModelChange)="getErrorMessage()"  formControlName="username" maxlength="6" class="form-control form-control-sm" placeholder="Username">
-                            </div>
-                            <div class="mb-3">
-                              <input type="password" (ngModelChange)="getErrorMessage()"  formControlName="passcode" maxlength="4" class="form-control form-control-sm" placeholder="Passcode">
-                            </div>
-                            <button type="submit" class="btn btn-danger btn-sm w-100">Submit</button>
-                        </form>
-                    </div>
-               
-            </div> 
-        </div> 
-    </div> 
-        <div *ngIf="isLogin">
-            <div class="card chat-body" style="width: 18rem;">
-               
-                    <div>
-                       <!-- chat header -->
-                       <div class="header">
-                        <span>
-                           <div>Chatting...</div>
-                        </span>
-                        <span class="user-log" (click)="logOut()">
-                           <p >{{user | uppercase}}</p>
-                        </span>
-                    </div>
-                       <!-- chat message  -->
-                       <app-text [messages]="messages"></app-text>
-                       <!-- chat footer -->
-                       <div class="footer p-2">
-                        <form [formGroup]="formData" (ngSubmit)="onSubmit()" >
-                        <div class="input-group input-group-sm">
-                            <span class="input-group-text" (click)="getMessage()"><i class="bi bi-activity"></i></span>
-                                <input id="myText" placeholder="Type message" type="text" formControlName="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                                <button class="btn btn-success" [disabled]="!formData.valid"  type="submit"><span><i class="bi bi-send"></i></span></button>    
-                          </div>
-                        </form>
-                    </div>
-                    </div>
-               
-            </div> 
-        </div>  
-    </div>
-    
+              <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmitLog()">
+                  @if (errorMessage) {
+                    <label class="error-message">Username and passcode is wrong !</label>
+                  }
+                  <div class="mb-3">
+                    <input type="text" (ngModelChange)="getErrorMessage()"  formControlName="username" maxlength="6" class="form-control form-control-sm" placeholder="Username">
+                  </div>
+                  <div class="mb-3">
+                    <input type="password" (ngModelChange)="getErrorMessage()"  formControlName="passcode" maxlength="4" class="form-control form-control-sm" placeholder="Passcode">
+                  </div>
+                  <button type="submit" class="btn btn-danger btn-sm w-100">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+    @if (isLogin) {
+      <div>
+        <div class="card chat-body" style="width: 18rem;">
+          <div>
+            <!-- chat header -->
+            <div class="header">
+              <span>
+                <div>Chatting...</div>
+              </span>
+              <span class="user-log" (click)="logOut()">
+                <p >{{user | uppercase}}</p>
+              </span>
+            </div>
+            <!-- chat message  -->
+            <app-text [messages]="messages"></app-text>
+            <!-- chat footer -->
+            <div class="footer p-2">
+              <form [formGroup]="formData" (ngSubmit)="onSubmit()" >
+                <div class="input-group input-group-sm">
+                  <span class="input-group-text" (click)="getMessage()"><i class="bi bi-activity"></i></span>
+                  <input id="myText" placeholder="Type message" type="text" formControlName="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  <button class="btn btn-success" [disabled]="!formData.valid"  type="submit"><span><i class="bi bi-send"></i></span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
 </div>
 
 <!-- <app-login *ngIf="!isLogin" (newEvent)="updateData($event)"></app-login>
 <app-text *ngIf="isLogin"></app-text> -->
-    

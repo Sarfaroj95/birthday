@@ -1,21 +1,25 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CredentialsService } from 'src/app/services/credentials.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpperCasePipe } from '@angular/common';
+import { TextComponent } from './text/text.component';
 
 
 @Component({
-  selector: 'app-chat-boat',
-  templateUrl: './chat-boat.component.html',
-  styleUrls: ['./chat-boat.component.scss']
+    selector: 'app-chat-boat',
+    templateUrl: './chat-boat.component.html',
+    styleUrls: ['./chat-boat.component.scss'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, TextComponent, UpperCasePipe]
 })
 export class ChatBoatComponent implements OnInit {
 
   cardData: any = [
-    { _id: 1, title: "Tumi Buchheo Bochho na", 
+    { _id: 1, title: "Tumi Buchheo Bochho na",
       descriptioon: "Amar kosto ta keno bocho nago. Ami j tomar jonno pagol hoye jai. Koto din j phn koro ni amake, kotha boloni, amar moner abostha ta bocho na keno pagol",
       imgUrl: "../assets/foru/call.jpg"
     },
-    // { _id: 1, title: "Amar Chap", 
+    // { _id: 1, title: "Amar Chap",
     //   descriptioon: "Ami eto chap kemon vabe nebo, Tumi toh sob jano. Amar abosta ta. hotat kore emon ta korle keno. Phone tato korbe amake naki. Koto ta chape achi jano tumi.",
     //   imgUrl: "../assets/foru/call.jpg"
     // }
@@ -79,13 +83,13 @@ getErrorMessage(){
 
 onSubmitLog(){
   const formValue = this.loginForm.value;
-    this.service.ChatLogIn(formValue).subscribe( response => {
+    this.service.ChatLogIn(formValue).subscribe( (response:any) => {
       this.service.setUserName(response);
       this.loginForm.reset();
       this.isLogin = true;
       this.user  = this.service.getUser()!.slice(0, 1);
-    }, 
-    err =>{
+    },
+    (err:any) =>{
       this.errorMessage = true;
     })
 }
@@ -98,24 +102,24 @@ onSubmit(){
    this.formData.reset();
     this.getMessage();
   },
-  (err) => {
+  (err:any) => {
     console.log("Message not submit", err)
   })
 }
 
 
 getMessage(){
-  this.service.getData().subscribe( res => {
+  this.service.getData().subscribe( (res: any) => {
     console.log("SMS", res)
     this.messages = res;
   })
   }
 
-  
+
 
     // ngOnChanges(changes: SimpleChanges): void{
     //   console.log(changes)
     // }
-  
+
 
 }
