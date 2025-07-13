@@ -43,7 +43,7 @@
 
   .nav-bar li ul a {
     text-decoration: none;
-    padding: 4px 7px 4px;
+    padding: 6px 8px 4px;
 
   }
 
@@ -61,18 +61,22 @@
     color: #EE4266;
   }
 
-  .nav-bar-list .fa{
-    color: #6457f5;
+  .nav-bar-list {
+    margin-top: 4px;
+    .fa{
+      color: #6457f5;
+      width: 24px;
+      font-size: 22px;
+    }
   }
 
+
+
   .active{
-    background: rgba( 255, 255, 255, 0.2 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    box-shadow: 3px 3px 3px #cecece, -3px -3px 3px #fff;
     backdrop-filter: blur( 2.5px );
-    -webkit-backdrop-filter: blur( 2.5px );
-    border-radius: 4px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    border-bottom: 2px solid #6457f5;
+    border-radius: 6px 6px 3px;
+    border-top: 4px solid #6457f5;
     transition: fill 0.3s ease;
   }
 

@@ -1,9 +1,65 @@
 
 
-.main{
+// .body-section{
+//   padding: 12px;
+// }
+// .main{
+//   display: flex;
+//   gap: 4px;
+// }
+// .card{
+//   flex-grow: 1;
+// }
+
+// .fa{
+//   font-size: 32px;
+// }
+// .home-icons{
+//   display: flex;
+//   justify-content: space-between;
+// }
+// .home-icon{
+//   padding: 8px;
+//   box-shadow: 3px 3px 3px #cecece, -3px -3px 3px #fff;
+//   border-radius: 4px;
+//   height: 70px;
+//   width: 100px;
+//   text-align: center;
+// }
+
+/* app.component.css */
+.body-section{
+  padding: 10px;
+}
+.container {
   display: flex;
-  gap: 4px;
+  flex-direction: column;
+  gap: 16px;
 }
-.card{
-  flex-grow: 1;
+
+.row {
+  display: flex;
+  gap: 16px;
 }
+
+.cards {
+  flex: 1;
+  min-width: 0;
+  box-shadow: 3px 3px 3px #cecece, -3px -3px 3px #fff;
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.cards i {
+  font-size: 25px;
+  display: block;
+  margin-bottom: 8px;
+  color: #6457f5;
+}
+
+.name {
+  font-weight: bold;
+    color: #6457f5;
+}
+
