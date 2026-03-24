@@ -6,7 +6,6 @@ import { CredentialsService } from 'src/app/services/credentials.service';
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    standalone: true,
     imports: [FormsModule, ReactiveFormsModule]
 })
 export class LoginComponent implements OnInit {

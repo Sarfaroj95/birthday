@@ -5,7 +5,6 @@ import { NgClass, DatePipe } from '@angular/common';
     selector: 'app-text',
     templateUrl: './text.component.html',
     styleUrls: ['./text.component.scss'],
-    standalone: true,
     imports: [NgClass, DatePipe]
 })
 export class TextComponent implements OnInit {

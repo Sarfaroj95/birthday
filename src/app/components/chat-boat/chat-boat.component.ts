@@ -9,7 +9,6 @@ import { TextComponent } from './text/text.component';
     selector: 'app-chat-boat',
     templateUrl: './chat-boat.component.html',
     styleUrls: ['./chat-boat.component.scss'],
-    standalone: true,
     imports: [FormsModule, ReactiveFormsModule, TextComponent, UpperCasePipe]
 })
 export class ChatBoatComponent implements OnInit {

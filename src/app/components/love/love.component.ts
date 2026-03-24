@@ -7,7 +7,6 @@ import { UpperCasePipe } from '@angular/common';
     selector: 'app-love',
     templateUrl: './love.component.html',
     styleUrls: ['./love.component.scss'],
-    standalone: true,
     imports: [FormsModule, ReactiveFormsModule, UpperCasePipe]
 })
 export class LoveComponent implements OnInit {

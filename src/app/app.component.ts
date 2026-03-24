@@ -10,7 +10,6 @@ import { HomeComponent } from './components/home/home.component';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: true,
     imports: [HomeComponent, MessageComponent, LoveComponent, BirthDayComponent, ChatBoatComponent]
 })
 export class AppComponent {
