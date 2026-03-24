@@ -1,37 +1,41 @@
 <!-- <div class="body-section">
-  <div>
-    <div class="home-icons">
-      <div class="home-icon">
-        <i class="fa fa-home" aria-hidden="true"></i><br/>
-        <label>Home</label>
-      </div>
-       <div class="home-icon">
-        <i class="fa fa-home" aria-hidden="true"></i><br/>
-        <label>Home</label>
-      </div>
-       <div class="home-icon">
-        <i class="fa fa-home" aria-hidden="true"></i><br/>
-        <label>Home</label>
-      </div>
-       <div class="home-icon">
-        <i class="fa fa-home" aria-hidden="true"></i><br/>
-        <label>Home</label>
-      </div>
+<div>
+  <div class="home-icons">
+    <div class="home-icon">
+      <i class="fa fa-home" aria-hidden="true"></i><br/>
+      <label>Home</label>
     </div>
-  </div>
-</div> -->
-
-<div class="body-section">
-   <div class="cards" style="height: 140px; margin-bottom: 16px;">
-      <div class="name">Sarfaroj</div>
-      <p>This is my own app</p>
+    <div class="home-icon">
+      <i class="fa fa-home" aria-hidden="true"></i><br/>
+      <label>Home</label>
     </div>
-<div class="container">
-  <div *ngFor="let row of rows" class="row">
-    <div *ngFor="let item of row" class="cards">
-      <i class="fa" [ngClass]="item.icon"></i>
-      <div class="name">{{ item.name }}</div>
+    <div class="home-icon">
+      <i class="fa fa-home" aria-hidden="true"></i><br/>
+      <label>Home</label>
+    </div>
+    <div class="home-icon">
+      <i class="fa fa-home" aria-hidden="true"></i><br/>
+      <label>Home</label>
     </div>
   </div>
 </div>
+</div> -->
+
+<div class="body-section">
+  <div class="cards" style="height: 140px; margin-bottom: 16px;">
+    <div class="name">Sarfaroj</div>
+    <p>This is my own app</p>
+  </div>
+  <div class="container">
+    @for (row of rows; track row) {
+      <div class="row">
+        @for (item of row; track item) {
+          <div class="cards">
+            <i class="fa" [ngClass]="item.icon"></i>
+            <div class="name">{{ item.name }}</div>
+          </div>
+        }
+      </div>
+    }
+  </div>
 </div>
