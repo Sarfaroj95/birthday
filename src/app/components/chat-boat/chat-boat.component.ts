@@ -60,6 +60,7 @@ export class ChatBoatComponent implements OnInit {
     this.service.logOut();
     this.isLogin = false;
     this.isButton = false;
+
   }
 
   initFormLog(){
@@ -87,6 +88,9 @@ onSubmitLog(){
       this.service.setUserName(response);
       this.loginForm.reset();
       this.isLogin = true;
+      console.log("Login Success", response);
+       let un = this.service.userShortName.getValue();
+       console.log("user", un)
       this.user  = this.service.getUser()!.slice(0, 1);
     },
     (err:any) =>{
@@ -110,10 +114,9 @@ onSubmit(){
 
 getMessage(){
   this.service.getData().subscribe( (res: any) => {
-    console.log("SMS", res)
     this.messages = res;
-  })
-  }
+  });
+}
 
 
 

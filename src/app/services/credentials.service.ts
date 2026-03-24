@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http"; 
-import { Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +10,14 @@ export class CredentialsService {
   name!: string;
   userID: any;
   userName: string = 'Roni';
+  userShortName = new BehaviorSubject<string>(this.userName);
 
 
   // private url = "https://v1.nocodeapi.com/sarfaroj/google_sheets/SGkNoJyqyAMxWLTO?tabId=Sheet1"
 
   private HostUrl = "https://chatapp-delta-five.vercel.app"
   private LocalUrl =  "http://localhost:3001"
-  private url = this.HostUrl + "/api/v1/user/"
+  private url = this.LocalUrl + "/api/v1/user/"
 
   constructor( private http: HttpClient) {}
 
@@ -43,19 +44,21 @@ export class CredentialsService {
   postMessage(data:any){
     return this.http.post(this.url+"message", data)
   }
-	
+
 	setUserName(userData:any){
     this.userNameService(userData.user_id).subscribe( res => {
       let userDetails: any = res;
       this.userName = userDetails.name;
-      localStorage.setItem('user', userDetails.name );
+      // localStorage.setItem('user', userDetails.name );
+      this.userShortName.next(this.userName.slice(0, 1));
+      console.log("userName", res)
     });
 	}
 
   getnameUser(){
     return "Roni"
   }
-	
+
 	userNameService(userid: any ){
 	  return this.http.get(this.url+"chatuserget/"+userid)
 	}
