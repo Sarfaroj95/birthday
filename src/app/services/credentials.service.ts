@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, Observable, tap } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +9,8 @@ export class CredentialsService {
 
   name!: string;
   userID: any;
-  userName: string = 'Roni';
-  userShortName = new BehaviorSubject<string>(this.userName);
+
+  userShortName = new BehaviorSubject<string>("");
 
 
   // private url = "https://v1.nocodeapi.com/sarfaroj/google_sheets/SGkNoJyqyAMxWLTO?tabId=Sheet1"
@@ -38,7 +38,13 @@ export class CredentialsService {
 
 
   ChatLogIn(data:any){
-    return this.http.post(this.url+"chatuserlog", data)
+    return this.http.post(this.url+"chatuserlog", data).pipe(
+      tap((response:any) => {
+        if(response && response.token){
+          localStorage.setItem('token', response.token);
+        }
+      })
+    )
   }
 
   postMessage(data:any){
@@ -46,26 +52,26 @@ export class CredentialsService {
   }
 
 	setUserName(userData:any){
-    this.userNameService(userData.user_id).subscribe( res => {
-      let userDetails: any = res;
-      this.userName = userDetails.name;
-      // localStorage.setItem('user', userDetails.name );
-      this.userShortName.next(this.userName.slice(0, 1));
-      console.log("userName", res)
-    });
+    let userId = userData.user_id;
+    this.userNameService(userId).subscribe((res : any )=> {
+
+    })
+    // this.userNameService(userData.user_id).subscribe( res : any => {
+    //   // this.userName = userDetails.name;
+    //   // localStorage.setItem('user', userDetails.name );
+    //   const userShort = res.name.slice(0, 1);
+    //   this.userShortName.next(this.userName.slice(0, 1));
+    //   console.log("userName", res)
+    // });
 	}
 
-  getnameUser(){
-    return "Roni"
-  }
+
 
 	userNameService(userid: any ){
 	  return this.http.get(this.url+"chatuserget/"+userid)
 	}
 
-  getUserName(){
-    return this.userName;
-  }
+
 
   getListdata(){
     return null;

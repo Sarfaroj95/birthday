@@ -1,10 +1,23 @@
-<div class="message-list" #scroll>
+<div class="message-list">
+  <div class="scroll-container">
   @for (message of messages; track message) {
-    <p
+
+
+    <!-- Roni and Sumi are the user name for chat boat and user respectively, you can change it as you want -->
+    <!-- <p
       [ngClass]="{'left-message': message.user == 'Roni', 'right-message': message.user != 'Roni'}">
       <span class="text" [ngClass]="{'bg-primary': message.user != 'Roni', 'bg-success': message.user == 'Roni'}">{{message.text}}</span>
       <br/>
       <span class="date-time">{{message.createdAt | date : 'medium'}}</span>
+    </p> -->
+    <!-- Yara and Tipu are the user name for chat boat and user respectively, you can change it as you want -->
+    <p
+      [ngClass]="{'left-message': message.user == 'Yara', 'right-message': message.user != 'Yara'}">
+      <span class="text" [ngClass]="{'bg-primary': message.user != 'Yara', 'bg-success': message.user == 'Yara'}">{{message.text}}</span>
+      <br/>
+      <span class="date-time">{{message.createdAt | date : 'medium'}}</span>
     </p>
   }
+</div>
+
 </div>

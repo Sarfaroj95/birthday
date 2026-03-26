@@ -4,7 +4,7 @@
   }
 
   .chat-body{
-    height: 84vh;
+    height: 88vh;
   }
 
   .error-message{
@@ -17,7 +17,7 @@
   // Header Css
 
   .header{
-    background-color: #EE4266;
+    background-color: #6457f5;
       display: flex;
       justify-content: space-between;
       height: 40px;
@@ -32,18 +32,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2A1E5C;
+    // background-color: #2A1E5C;
+    border: 1px solid #fff;
     margin-right: 6px;
     border-radius: 50px;
+    cursor: pointer;
     p{
       font-size: 18px;
       padding-top: 15px;
       color: #fff;
     }
-  
-  
+
+
   }
 
   .footer{
     z-index: -1;
   }
+

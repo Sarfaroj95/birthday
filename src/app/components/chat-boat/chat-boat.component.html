@@ -1,22 +1,23 @@
 <div class="main-container">
   <div>
     @if (!isLogin) {
-      <div>
+      <div class="pt-4">
         @for (card of cardData; track card) {
-          <div class="card my-2" style="width: 18rem;">
+          <div class="cards my-2" style="width: 22rem;">
             <img class="card-img-top" [src]="card.imgUrl" alt="Card image cap">
             <a (click)="showBottom()">
               <div class="card-body">
-                <p class="card-title">{{card?.title}}</p>
-                <p class="card-text">{{card?.descriptioon}}</p>
+                <p class="card-title pt-3">{{card?.title}}</p>
+                <p class="card-text pt-2">{{card?.descriptioon}}</p>
               </div>
             </a>
           </div>
         }
         @if (isButton) {
           <div>
-            <div class="card" style="width: 18rem;">
+            <div class="cards mt-4" style="width: 22rem;">
               <div class="card-body">
+               <label>Login</label><br/><br/>
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmitLog()">
                   @if (errorMessage) {
                     <label class="error-message">Username and passcode is wrong !</label>
@@ -27,7 +28,7 @@
                   <div class="mb-3">
                     <input type="password" (ngModelChange)="getErrorMessage()"  formControlName="passcode" maxlength="4" class="form-control form-control-sm" placeholder="Passcode">
                   </div>
-                  <button type="submit" class="btn btn-danger btn-sm w-100">Submit</button>
+                  <button type="submit" class="new-btn w-100">Submit</button>
                 </form>
               </div>
             </div>
@@ -37,7 +38,7 @@
     }
     @if (isLogin) {
       <div>
-        <div class="card chat-body" style="width: 18rem;">
+        <div class="cards chat-body" style="width: 22rem;">
           <div>
             <!-- chat header -->
             <div class="header">
@@ -45,7 +46,7 @@
                 <div>Online</div>
               </span>
               <span class="user-log" (click)="logOut()">
-                <p >{{user | uppercase}}</p>
+                <p>{{userShortName | uppercase}}</p>
               </span>
             </div>
             <!-- chat message  -->

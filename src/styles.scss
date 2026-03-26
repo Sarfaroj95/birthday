@@ -16,6 +16,15 @@ body{
     padding-bottom: 60px;
 }
 
+.cards {
+  flex: 1;
+  min-width: 0;
+  box-shadow: 3px 3px 3px #cecece, -3px -3px 3px #fff;
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+}
+
 // common card blinking
 .card{
 
@@ -40,3 +49,73 @@ body{
       font-size: 16px !important;
       font-weight: 600 !important;
     }
+
+    // shadow UI code
+.new-card{
+    // padding: 20px;
+    margin-top: 20px;
+    background-color: #F5F5F5;
+    margin-bottom: 20px;
+
+}
+
+.log-card{
+    padding: 20px;
+    box-shadow: 3px 3px 3px #cecece, -3px -3px 3px #fff;
+    border-radius: 20px;
+    width:22rem;
+}
+
+.new-btn{
+    border-radius: 20px;
+    border: none;
+    padding: 8px 10px;
+    background: linear-gradient(to bottom right,#eff0f3,#e5e6eb);
+    color: rgba(7,30,84,.3);
+    font-size: 13px;
+    box-shadow: 3px 3px 3px #cecece, -3px -3px 3px #fff;
+    width: 90px;
+    color: #B2B9C9;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.new-btn:hover{
+    color: #000;
+    box-shadow: inset 3px 3px 6px #bfc3cf, inset -3px -3px 9px #fff;
+}
+label{
+    font-size: 16px;
+    color: #B2B9C9;
+    font-weight: 600;
+}
+input{
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    background: linear-gradient(to bottom right,#eff0f3,#e5e6eb);
+    color: rgba(7,30,84,.3);
+    font-size: 13px;
+    box-shadow: inset 3px 3px 6px #bfc3cf, inset -3px -3px 9px #fff;
+    transition: width 1s linear 1s;
+
+}
+
+
+.form-control:focus {
+    border: 1px solid #6457f5; /* The blue color */
+    outline: 0;                /* Removes the default browser outline */
+    box-shadow: none;          /* Removes the Bootstrap "glow" */
+     box-shadow: inset 3px 3px 6px #bfc3cf, inset -3px -3px 9px #fff;
+}
+
+// when hover input then expand the width of input
+// input:hover {
+//     width: 200px;
+// }
+
+
+
