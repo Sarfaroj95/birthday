@@ -38,7 +38,7 @@
     }
     @if (isLogin) {
       <div>
-        <div class="cards chat-body" style="width: 22rem;">
+        <div class="cards chat-body mt-4" style="width: 22rem;">
           <div>
             <!-- chat header -->
             <div class="header">
@@ -52,7 +52,7 @@
             <!-- chat message  -->
             <app-text [messages]="messages"></app-text>
             <!-- chat footer -->
-            <div class="footer p-2">
+            <div class="footer">
               <form [formGroup]="formData" (ngSubmit)="onSubmit()" >
                 <div class="input-group input-group-sm">
                   <span class="input-group-text" (click)="getMessage()"><i class="bi bi-activity"></i></span>
