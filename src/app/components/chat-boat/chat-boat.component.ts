@@ -3,7 +3,6 @@ import { CredentialsService } from 'src/app/services/credentials.service';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
 import { TextComponent } from './text/text.component';
-import { HotToastService } from '@ngxpert/hot-toast';
 
 
 interface Message {
@@ -50,7 +49,7 @@ export class ChatBoatComponent implements OnInit {
 @Input() data:any
 
 
-  constructor(private fb: FormBuilder, private service: CredentialsService, private toast: HotToastService) { }
+  constructor(private fb: FormBuilder, private service: CredentialsService) { }
 
 
   ngOnInit(): void {
@@ -94,7 +93,6 @@ getErrorMessage(){
 }
 
 onSubmitLog(){
-  this.showToast();
   const formValue = this.loginForm.value;
     this.service.ChatLogIn(formValue).subscribe( (response:any) => {
       this.loginForm.reset();
@@ -125,15 +123,6 @@ onSubmitLog(){
     })
 }
 
-
- showToast() {
-    this.toast.show('Hello World!');
-    this.toast.loading('Lazyyy...');
-    this.toast.success('Yeah!!');
-    this.toast.warning('Boo!');
-    this.toast.error('Oh no!');
-    this.toast.info('Something...');
-  }
 
 
 // Message Submit
