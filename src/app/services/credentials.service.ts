@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable, tap } from "rxjs";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,9 @@ export class CredentialsService {
 
   // private url = "https://v1.nocodeapi.com/sarfaroj/google_sheets/SGkNoJyqyAMxWLTO?tabId=Sheet1"
 
-  private HostUrl = "https://chatapp-delta-five.vercel.app"
+  private HostUrl = environment.BASE_URL
   private LocalUrl =  "http://localhost:3001"
-  private url = this.LocalUrl + "/api/v1/user/"
+  private url = environment.BASE_URL + "/api/v1/user/"
 
   constructor( private http: HttpClient) {}
 
